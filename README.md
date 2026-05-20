@@ -9,20 +9,60 @@
 ---
 
 ## 📌 Abstract
-Perinatal depression affects **30–37%** of women in Pakistan,
-representing a substantial but under-recognized public health 
-crisis. This study developed and interpreted a predictive model 
-for perinatal depression severity using the PERI_DEP dataset 
-(n=14,006) from Pakistan.
+**Background:** Perinatal depression is a significant public 
+health challenge in Pakistan, affecting approximately **30–37%** 
+of perinatal women — a substantial but chronically 
+under-recognized crisis. Driven by complex socio-cultural, 
+economic, and obstetric factors, its consequences extend beyond 
+maternal well-being to adversely affect infant development and 
+long-term family health outcomes.
 
-Three gradient boosting models were compared:
-- XGBoost
-- LightGBM  
-- NGBoost
+**Problem:** Despite its high prevalence, most existing 
+predictive models rely on binary classification approaches 
+and traditional statistical methods that fail to capture 
+the complex, non-linear interactions among risk factors. 
+Furthermore, many models lack cultural specificity and 
+clinical interpretability, limiting their real-world utility.
 
-The top-performing model **(XGBoost)** was interpreted using 
-**SHAP** and **Partial Dependence Plots (PDPs)** to identify 
-key predictors and quantify their non-linear effects.
+**Methods:** This study developed and interpreted a 
+**Hybrid Probabilistic–Ensemble Framework** for predicting 
+perinatal depression severity using the PERI_DEP dataset 
+(n=14,006) from Lahore and Gujranwala, Pakistan. Three 
+state-of-the-art gradient boosting models were systematically 
+compared:
+- 🤖 **XGBoost** — Standard gradient boosting
+- ⚡ **LightGBM** — Light gradient boosting
+- 🎲 **NGBoost** — Probabilistic gradient boosting 
+  with uncertainty quantification
+
+The top-performing model **(XGBoost, R²=0.713, MAE=0.881)** 
+was rigorously interpreted using:
+- **SHAP (SHapley Additive exPlanations)** — for global 
+  and local feature importance
+- **Partial Dependence Plots (PDPs)** — for visualizing 
+  non-linear predictor effects
+
+**Results:** XGBoost significantly outperformed both 
+NGBoost (R²=0.639) and LightGBM (R²=0.479) on the 
+holdout test set. SHAP analysis revealed three critical 
+clinical insights:
+- 📐 A **U-shaped risk curve** for maternal age, with 
+  highest depression risk at the extremes of the 
+  reproductive age spectrum
+- 🛡️ A strong **protective effect** from appearance 
+  acceptance, identifying it as a key modifiable 
+  psychosocial intervention target
+- ⚠️ A **compounding caregiver strain effect** in 
+  households with high numbers of both sons and daughters
+
+**Conclusion:** The resulting interpretable model serves 
+as a robust epidemiological tool, moving beyond simple 
+prediction to provide a nuanced understanding of 
+perinatal depression risk architecture. This work 
+provides a data-driven pathway for developing targeted 
+screening protocols and psychosocial interventions in 
+maternal healthcare within Pakistan and similar 
+low-to-middle-income country contexts.
 
 ---
 
