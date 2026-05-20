@@ -76,11 +76,30 @@ key predictors and quantify their non-linear effects.
 ## 🏆 Results
 
 ### Model Comparison
-| Model | R² | MAE | Performance |
-|-------|-----|-----|-------------|
-| **XGBoost** | **0.713** | **0.881** | 🥇 Best |
-| NGBoost | 0.639 | - | 🥈 Second |
-| LightGBM | 0.479 | - | 🥉 Third |
+**Table 3: Comparative Performance Metrics of Gradient Boosting Frameworks**
+
+| Model | Split | MAE | RMSE | R² | Pearson r | IoA | CCC |
+|-------|-------|-----|------|----|-----------|-----|-----|
+| **XGBoost** | Train | 0.218 | 0.715 | 0.963 | 0.981 | 0.990 | 0.981 |
+| **XGBoost** | **Test** | **0.881** | **1.996** | **0.713** | **0.848** | **0.920** | **0.846** |
+| NGBoost | Train | 0.920 | 1.390 | 0.860 | 0.936 | 0.956 | 0.915 |
+| NGBoost | Test | 1.445 | 2.215 | 0.639 | 0.799 | 0.868 | 0.755 |
+| LightGBM | Train | 1.309 | 1.833 | 0.757 | 0.887 | 0.913 | 0.839 |
+| LightGBM | Test | 2.000 | 2.687 | 0.479 | 0.697 | 0.783 | 0.622 |
+
+> 🥇 **XGBoost is the best performing model** across all 
+> metrics on the test set.
+
+### Metric Definitions
+| Metric | Meaning |
+|--------|---------|
+| **MAE** | Mean Absolute Error (lower is better) |
+| **RMSE** | Root Mean Square Error (lower is better) |
+| **R²** | Variance explained (higher is better) |
+| **Pearson r** | Linear correlation (higher is better) |
+| **IoA** | Index of Agreement (higher is better) |
+| **CCC** | Concordance Correlation Coefficient (higher is better) |
+
 
 ### Key SHAP Findings
 - 📚 **Maternal/Spousal Education** → Most important predictor
