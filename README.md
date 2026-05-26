@@ -1,5 +1,4 @@
-# Hybrid Probabilistic–Ensemble Framework for Early Detection 
-# of Perinatal Depression
+# Hybrid Probabilistic–Ensemble Framework for Early Detection of Perinatal Depression
 
 ### 📚 Course: Math 5366 - Data Science Capstone | Spring 2025
 ### 🏫 Tarleton State University
